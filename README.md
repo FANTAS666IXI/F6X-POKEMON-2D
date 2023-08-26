@@ -7,7 +7,7 @@
 
   - Unity : 2019.3.6f1
 
-  - F6X POKEMON 2D : 0.0.2
+  - F6X POKEMON 2D : 0.0.3
 
 - Bibliography :
 
