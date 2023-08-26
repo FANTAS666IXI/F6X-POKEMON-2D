@@ -1,13 +1,13 @@
 # F6X POKEMON 2D
 - Description :
 
-  - Pokemon 2D game in Unity.
+  - Pokemon 2D game like in Unity.
 
 - Versions :
 
   - Unity : 2019.3.6f1
 
-  - F6X POKEMON 2D : 0.0.1
+  - F6X POKEMON 2D : 0.0.2
 
 - Bibliography :
 
