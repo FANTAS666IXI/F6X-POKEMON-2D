@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,6 +6,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     private bool isMoving;
     private Vector2 input;
+    public GameManager gameManager;
 
     private void Update()
     {
@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour
                 targetPos.y += input.y;
                 StartCoroutine(Move(targetPos));
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameManager.ExitGame();
         }
     }
 
