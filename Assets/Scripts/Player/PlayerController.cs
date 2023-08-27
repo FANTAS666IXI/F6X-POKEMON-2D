@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private bool isMoving;
     private Vector2 input;
     private GameManager gameManager;
+    private MainAudioSource mainAudioSource;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private void InitializeReferences()
     {
         gameManager = FindObjectOfType<GameManager>();
+        mainAudioSource = FindObjectOfType<MainAudioSource>();
     }
 
     private void InitializeVariables()
@@ -30,7 +32,16 @@ public class PlayerController : MonoBehaviour
     {
         CurrentMoveSpeed();
         Movement();
+        ModifyVolume();
         QuitGame();
+    }
+
+    private void CurrentMoveSpeed()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.LeftShift))
+            currentMoveSpeed = defaultMoveSpeed * multiplicatorRunMoveSpeed;
+        if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.LeftShift))
+            currentMoveSpeed = defaultMoveSpeed;
     }
 
     private void Movement()
@@ -62,12 +73,12 @@ public class PlayerController : MonoBehaviour
         isMoving = false;
     }
 
-    private void CurrentMoveSpeed()
+    private void ModifyVolume()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.LeftShift))
-            currentMoveSpeed = defaultMoveSpeed * multiplicatorRunMoveSpeed;
-        if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.LeftShift))
-            currentMoveSpeed = defaultMoveSpeed;
+        if (Input.GetKeyDown(KeyCode.Plus) || Input.GetKeyDown(KeyCode.KeypadPlus))
+            mainAudioSource.ModifyVolume(true);
+        if (Input.GetKeyDown(KeyCode.Minus) || Input.GetKeyDown(KeyCode.KeypadMinus))
+            mainAudioSource.ModifyVolume(false);
     }
 
     private void QuitGame()
