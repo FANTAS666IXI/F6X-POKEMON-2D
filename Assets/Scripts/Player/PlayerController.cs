@@ -3,12 +3,37 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed;
+    public float defaultMoveSpeed;
+    public float multiplicatorRunMoveSpeed;
+    private float currentMoveSpeed;
     private bool isMoving;
     private Vector2 input;
-    public GameManager gameManager;
+    private GameManager gameManager;
+
+    private void Start()
+    {
+        InitializeReferences();
+        InitializeVariables();
+    }
+
+    private void InitializeReferences()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
+
+    private void InitializeVariables()
+    {
+        currentMoveSpeed = defaultMoveSpeed;
+    }
 
     private void Update()
+    {
+        CurrentMoveSpeed();
+        Movement();
+        QuitGame();
+    }
+
+    private void Movement()
     {
         if (!isMoving)
         {
@@ -23,11 +48,6 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(Move(targetPos));
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            gameManager.ExitGame();
-        }
     }
 
     IEnumerator Move(Vector3 targetPos)
@@ -35,10 +55,26 @@ public class PlayerController : MonoBehaviour
         isMoving = true;
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, currentMoveSpeed * Time.deltaTime);
             yield return null;
         }
         transform.position = targetPos;
         isMoving = false;
+    }
+
+    private void CurrentMoveSpeed()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.LeftShift))
+            currentMoveSpeed = defaultMoveSpeed * multiplicatorRunMoveSpeed;
+        if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.LeftShift))
+            currentMoveSpeed = defaultMoveSpeed;
+    }
+
+    private void QuitGame()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameManager.ExitGame();
+        }
     }
 }

@@ -2183,5 +2183,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03dc03f7f536df49ac66ab317cf9913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  gameManager: {fileID: 1606104849}
+  defaultMoveSpeed: 5
+  multiplicatorRunMoveSpeed: 2

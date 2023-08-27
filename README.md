@@ -10,13 +10,14 @@
   - Move Left  : A / ←
   - Move Down  : S / ↓
   - Move Right : D / →
+  - Run        : Space / Left Shift
   - Exit game  : Escape
 
 - Versions :
 
   - Unity : 2019.3.6f1
 
-  - F6X POKEMON 2D : 0.1.1
+  - F6X POKEMON 2D : 0.1.2
 
 - Bibliography :
 
