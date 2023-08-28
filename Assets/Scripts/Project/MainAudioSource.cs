@@ -1,15 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MainAudioSource : MonoBehaviour
 {
+    public float stepVolume;
+    private float volumeRounded;
     private AudioSource audioSource;
 
-    private void Start()
+    private void Awake()
     {
         InitializeReferences();
-        Debug.Log(audioSource.volume);
     }
 
     private void InitializeReferences()
@@ -17,18 +16,24 @@ public class MainAudioSource : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    private void Start()
+    {
+        ShowVolume();
+    }
+
     public void ModifyVolume(bool modifyVolume)
     {
         if (modifyVolume)
-            audioSource.volume += 0.1f;
-        if (!modifyVolume)
-            audioSource.volume -= 0.1f;
-        AdjustVolume();
-        Debug.Log("Current Volume : " + audioSource.volume);
+            audioSource.volume += stepVolume;
+        else
+            audioSource.volume -= stepVolume;
+        audioSource.volume = Mathf.Clamp01(audioSource.volume);
+        ShowVolume();
     }
 
-    private void AdjustVolume()
+    private void ShowVolume()
     {
-        audioSource.volume = Mathf.Clamp01(audioSource.volume);
+        volumeRounded = Mathf.Round(audioSource.volume * 100f) / 100f;
+        Debug.Log("Current Volume : " + volumeRounded);
     }
 }

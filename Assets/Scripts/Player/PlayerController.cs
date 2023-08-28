@@ -10,17 +10,23 @@ public class PlayerController : MonoBehaviour
     private Vector2 input;
     private GameManager gameManager;
     private MainAudioSource mainAudioSource;
+    private Animator animator;
 
-    private void Start()
+    private void Awake()
     {
         InitializeReferences();
-        InitializeVariables();
     }
 
     private void InitializeReferences()
     {
         gameManager = FindObjectOfType<GameManager>();
         mainAudioSource = FindObjectOfType<MainAudioSource>();
+        animator = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        InitializeVariables();
     }
 
     private void InitializeVariables()
@@ -30,13 +36,13 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        CurrentMoveSpeed();
+        MovementType();
         Movement();
         ModifyVolume();
         QuitGame();
     }
 
-    private void CurrentMoveSpeed()
+    private void MovementType()
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.LeftShift))
             currentMoveSpeed = defaultMoveSpeed * multiplicatorRunMoveSpeed;
@@ -53,12 +59,15 @@ public class PlayerController : MonoBehaviour
             if (input.x != 0) input.y = 0;
             if (input != Vector2.zero)
             {
+                animator.SetFloat("moveX", input.x);
+                animator.SetFloat("moveY", input.y);
                 var targetPos = transform.position;
                 targetPos.x += input.x;
                 targetPos.y += input.y;
                 StartCoroutine(Move(targetPos));
             }
         }
+        animator.SetBool("isMoving", isMoving);
     }
 
     IEnumerator Move(Vector3 targetPos)
@@ -84,8 +93,6 @@ public class PlayerController : MonoBehaviour
     private void QuitGame()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-        {
             gameManager.ExitGame();
-        }
     }
 }
