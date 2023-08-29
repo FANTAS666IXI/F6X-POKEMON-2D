@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float multiplicatorRunMoveSpeed;
     private float currentMoveSpeed;
     private bool isMoving;
+    private bool isRuning;
     private Vector2 input;
     private GameManager gameManager;
     private MainAudioSource mainAudioSource;
@@ -36,42 +37,71 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        MovementType();
+        SetRuning();
         Movement();
         ModifyVolume();
-        QuitGame();
+        ExitGame();
     }
 
-    private void MovementType()
+    private void SetRuning()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.LeftShift))
+        {
             currentMoveSpeed = defaultMoveSpeed * multiplicatorRunMoveSpeed;
-        if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.LeftShift))
+            animator.speed = multiplicatorRunMoveSpeed;
+            if (!isRuning)
+            {
+                SwitchIsRuning();
+                gameManager.ConsoleLog($"Player Start Runing, CurrentSpeed = {currentMoveSpeed:F1}");
+            }
+        }
+        else
+        {
             currentMoveSpeed = defaultMoveSpeed;
+            animator.speed = 1;
+            if (isRuning)
+            {
+                SwitchIsRuning();
+                gameManager.ConsoleLog($"Player Stop Runing, CurrentSpeed = {currentMoveSpeed:F1}");
+            }
+        }
+    }
+
+    private void SwitchIsRuning()
+    {
+        isRuning = !isRuning;
     }
 
     private void Movement()
     {
         if (!isMoving)
         {
-            input.x = Input.GetAxisRaw("Horizontal");
-            input.y = Input.GetAxisRaw("Vertical");
-            if (input.x != 0) input.y = 0;
+            GetMovementInputs();
             if (input != Vector2.zero)
             {
-                animator.SetFloat("moveX", input.x);
-                animator.SetFloat("moveY", input.y);
-                var targetPos = transform.position;
-                targetPos.x += input.x;
-                targetPos.y += input.y;
-                StartCoroutine(Move(targetPos));
+                SetAnimatorMoveXY();
+                StartCoroutine(Move(ObtainTargetPos()));
             }
         }
         animator.SetBool("isMoving", isMoving);
     }
 
+    private void GetMovementInputs()
+    {
+        input.x = Input.GetAxisRaw("Horizontal");
+        input.y = Input.GetAxisRaw("Vertical");
+        if (input.x != 0) input.y = 0;
+    }
+
+    private void SetAnimatorMoveXY()
+    {
+        animator.SetFloat("moveX", input.x);
+        animator.SetFloat("moveY", input.y);
+    }
+
     IEnumerator Move(Vector3 targetPos)
     {
+        gameManager.ConsoleLog($"Player Move By ({input.x},{input.y}).", 5);
         isMoving = true;
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
@@ -82,6 +112,14 @@ public class PlayerController : MonoBehaviour
         isMoving = false;
     }
 
+    private Vector3 ObtainTargetPos()
+    {
+        var targetPos = transform.position;
+        targetPos.x += input.x;
+        targetPos.y += input.y;
+        return targetPos;
+    }
+
     private void ModifyVolume()
     {
         if (Input.GetKeyDown(KeyCode.Plus) || Input.GetKeyDown(KeyCode.KeypadPlus))
@@ -90,7 +128,7 @@ public class PlayerController : MonoBehaviour
             mainAudioSource.ModifyVolume(false);
     }
 
-    private void QuitGame()
+    private void ExitGame()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             gameManager.ExitGame();

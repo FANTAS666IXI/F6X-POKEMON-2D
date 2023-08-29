@@ -2,8 +2,9 @@
 
 public class MainAudioSource : MonoBehaviour
 {
-    public float stepVolume;
+    public float stepVolumeSize;
     private float volumeRounded;
+    private GameManager gameManager;
     private AudioSource audioSource;
 
     private void Awake()
@@ -13,20 +14,22 @@ public class MainAudioSource : MonoBehaviour
 
     private void InitializeReferences()
     {
+        gameManager = FindObjectOfType<GameManager>();
         audioSource = GetComponent<AudioSource>();
-    }
-
-    private void Start()
-    {
-        ShowVolume();
     }
 
     public void ModifyVolume(bool modifyVolume)
     {
         if (modifyVolume)
-            audioSource.volume += stepVolume;
+        {
+            audioSource.volume += stepVolumeSize;
+            gameManager.ConsoleLog($"Volume Increased By {stepVolumeSize:F2}.");
+        }
         else
-            audioSource.volume -= stepVolume;
+        {
+            audioSource.volume -= stepVolumeSize;
+            gameManager.ConsoleLog($"Volume Decreased By {stepVolumeSize:F2}.");
+        }
         audioSource.volume = Mathf.Clamp01(audioSource.volume);
         ShowVolume();
     }
@@ -34,6 +37,6 @@ public class MainAudioSource : MonoBehaviour
     private void ShowVolume()
     {
         volumeRounded = Mathf.Round(audioSource.volume * 100f) / 100f;
-        Debug.Log("Current Volume : " + volumeRounded);
+        gameManager.ConsoleLog($"Current Volume = {volumeRounded:F2} .");
     }
 }
