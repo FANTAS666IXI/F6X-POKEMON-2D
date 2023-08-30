@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Color classColor;
     public float defaultMoveSpeed;
     public float multiplicatorRunMoveSpeed;
     private float currentMoveSpeed;
@@ -52,7 +53,8 @@ public class PlayerController : MonoBehaviour
             if (!isRuning)
             {
                 SwitchIsRuning();
-                gameManager.ConsoleLog($"Player Start Runing, CurrentSpeed = {currentMoveSpeed:F1}");
+                ConsoleLog("Player Start Runing.");
+                ShowCurrentMoveSpeed();
             }
         }
         else
@@ -62,7 +64,8 @@ public class PlayerController : MonoBehaviour
             if (isRuning)
             {
                 SwitchIsRuning();
-                gameManager.ConsoleLog($"Player Stop Runing, CurrentSpeed = {currentMoveSpeed:F1}");
+                ConsoleLog("Player Stop Runing.");
+                ShowCurrentMoveSpeed();
             }
         }
     }
@@ -70,6 +73,11 @@ public class PlayerController : MonoBehaviour
     private void SwitchIsRuning()
     {
         isRuning = !isRuning;
+    }
+
+    private void ShowCurrentMoveSpeed()
+    {
+        ConsoleLog($"CurrentMoveSpeed = {currentMoveSpeed:F1}.");
     }
 
     private void Movement()
@@ -101,7 +109,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Move(Vector3 targetPos)
     {
-        gameManager.ConsoleLog($"Player Move By ({input.x},{input.y}).", 5);
+        ConsoleLog($"Player Move By ({input.x},{input.y}).");
         isMoving = true;
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
@@ -132,5 +140,10 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             gameManager.ExitGame();
+    }
+
+    private void ConsoleLog(string message)
+    {
+        gameManager.MainConsoleLog($"{message}", classColor);
     }
 }

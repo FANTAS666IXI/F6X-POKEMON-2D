@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public Color classColor;
+
     private void Start()
     {
         ConsoleLog("Starting Game...");
@@ -14,11 +16,17 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void ConsoleLog(string message, int frame = 1)
+    private void ConsoleLog(string message)
+    {
+        MainConsoleLog($"{message}", classColor);
+    }
+
+    public void MainConsoleLog(string message, Color classColor, int frame = 1)
     {
         StackTrace stackTrace = new StackTrace();
         StackFrame stackFrame = stackTrace.GetFrame(frame);
         string callingScript = stackFrame.GetMethod().DeclaringType.Name;
-        UnityEngine.Debug.Log("[" + callingScript + "]: " + message);
+        string stringClassColor = ("#" + ColorUtility.ToHtmlStringRGBA(classColor));
+        UnityEngine.Debug.Log($"<b>[<color={stringClassColor}>{callingScript}</color>]: {message}</b>");
     }
 }

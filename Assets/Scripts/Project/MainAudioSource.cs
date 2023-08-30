@@ -2,6 +2,7 @@
 
 public class MainAudioSource : MonoBehaviour
 {
+    public Color classColor;
     public float stepVolumeSize;
     private float volumeRounded;
     private GameManager gameManager;
@@ -23,12 +24,12 @@ public class MainAudioSource : MonoBehaviour
         if (modifyVolume)
         {
             audioSource.volume += stepVolumeSize;
-            gameManager.ConsoleLog($"Volume Increased By {stepVolumeSize:F2}.");
+            ConsoleLog($"Volume Increased By {stepVolumeSize:F2}.");
         }
         else
         {
             audioSource.volume -= stepVolumeSize;
-            gameManager.ConsoleLog($"Volume Decreased By {stepVolumeSize:F2}.");
+            ConsoleLog($"Volume Decreased By {stepVolumeSize:F2}.");
         }
         audioSource.volume = Mathf.Clamp01(audioSource.volume);
         ShowVolume();
@@ -37,6 +38,10 @@ public class MainAudioSource : MonoBehaviour
     private void ShowVolume()
     {
         volumeRounded = Mathf.Round(audioSource.volume * 100f) / 100f;
-        gameManager.ConsoleLog($"Current Volume = {volumeRounded:F2} .");
+        ConsoleLog($"Current Volume = {volumeRounded:F2} .");
+    }
+    private void ConsoleLog(string message)
+    {
+        gameManager.MainConsoleLog($"{message}", classColor);
     }
 }
