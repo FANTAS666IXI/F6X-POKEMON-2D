@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     private bool isRuning;
     private Vector2 input;
     private GameManager gameManager;
-    private MainAudioSource mainAudioSource;
     private Animator animator;
 
     private void Awake()
@@ -22,7 +21,6 @@ public class PlayerController : MonoBehaviour
     private void InitializeReferences()
     {
         gameManager = FindObjectOfType<GameManager>();
-        mainAudioSource = FindObjectOfType<MainAudioSource>();
         animator = GetComponent<Animator>();
     }
 
@@ -40,8 +38,6 @@ public class PlayerController : MonoBehaviour
     {
         SetRuning();
         Movement();
-        ModifyVolume();
-        ExitGame();
     }
 
     private void SetRuning()
@@ -126,20 +122,6 @@ public class PlayerController : MonoBehaviour
         targetPos.x += input.x;
         targetPos.y += input.y;
         return targetPos;
-    }
-
-    private void ModifyVolume()
-    {
-        if (Input.GetKeyDown(KeyCode.Plus) || Input.GetKeyDown(KeyCode.KeypadPlus))
-            mainAudioSource.ModifyVolume(true);
-        if (Input.GetKeyDown(KeyCode.Minus) || Input.GetKeyDown(KeyCode.KeypadMinus))
-            mainAudioSource.ModifyVolume(false);
-    }
-
-    private void ExitGame()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            gameManager.ExitGame();
     }
 
     private void ConsoleLog(string message)
