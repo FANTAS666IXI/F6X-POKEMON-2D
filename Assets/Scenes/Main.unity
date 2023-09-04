@@ -390,6 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   classColor: {r: 0.3764706, g: 0, b: 0.73333335, a: 1}
+  consoleLog: 1
   stepVolumeSize: 0.05
 --- !u!1 &1606104848
 GameObject:
@@ -421,6 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   classColor: {r: 0, g: 0.26666668, b: 0.8, a: 1}
+  consoleLog: 1
   consoleLogSystem: 1
 --- !u!4 &1606104850
 Transform:
@@ -2242,8 +2244,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2113006931}
-  - component: {fileID: 2113006930}
   - component: {fileID: 2113006932}
+  - component: {fileID: 2113006930}
   - component: {fileID: 2113006933}
   m_Layer: 0
   m_Name: Player
@@ -2330,6 +2332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   classColor: {r: 0.8666667, g: 0, b: 0, a: 1}
+  consoleLog: 1
   defaultMoveSpeed: 3
   multiplicatorRunMoveSpeed: 1.6
 --- !u!95 &2113006933

@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Color classColor;
+    public bool consoleLog;
     public float defaultMoveSpeed;
     public float multiplicatorRunMoveSpeed;
     private float currentMoveSpeed;
@@ -126,6 +127,7 @@ public class PlayerController : MonoBehaviour
 
     private void ConsoleLog(string message)
     {
-        gameManager.MainConsoleLog($"{message}", classColor);
+        if (consoleLog)
+            gameManager.MainConsoleLog($"{message}", classColor);
     }
 }

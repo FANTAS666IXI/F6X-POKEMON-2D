@@ -3,6 +3,7 @@
 public class MainAudioSource : MonoBehaviour
 {
     public Color classColor;
+    public bool consoleLog;
     public float stepVolumeSize;
     private float volumeRounded;
     private GameManager gameManager;
@@ -49,6 +50,7 @@ public class MainAudioSource : MonoBehaviour
 
     private void ConsoleLog(string message)
     {
-        gameManager.MainConsoleLog($"{message}", classColor);
+        if (consoleLog)
+            gameManager.MainConsoleLog($"{message}", classColor);
     }
 }

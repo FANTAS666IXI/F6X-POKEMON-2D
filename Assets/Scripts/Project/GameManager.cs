@@ -4,9 +4,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Color classColor;
+    public bool consoleLog;
     public bool consoleLogSystem;
 
-    private void Start()
+    private void Awake()
     {
         ConsoleLog("Starting Game...");
     }
@@ -27,7 +28,8 @@ public class GameManager : MonoBehaviour
 
     private void ConsoleLog(string message)
     {
-        MainConsoleLog($"{message}", classColor);
+        if (consoleLog)
+            MainConsoleLog($"{message}", classColor);
     }
 
     public void MainConsoleLog(string message, Color classColor, int frame = 1)
