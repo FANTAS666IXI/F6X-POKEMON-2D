@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public bool isMoving;
     private Vector2 input;
+    private Animator animator;
+
     public Color classColor;
     public bool consoleLog;
     private GameManager gameManager;
@@ -17,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     private void InitializeReferences()
     {
+        animator = GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
     }
 
@@ -29,6 +32,8 @@ public class PlayerController : MonoBehaviour
             if (input.x != 0) input.y = 0;
             if (input != Vector2.zero)
             {
+                animator.SetFloat("moveX", input.x);
+                animator.SetFloat("moveY", input.y);
                 var targetPos = transform.position;
                 targetPos.x += input.x;
                 targetPos.y += input.y;
@@ -36,6 +41,7 @@ public class PlayerController : MonoBehaviour
                 ConsoleLog($"Player Move By ({input.x},{input.y}).");
             }
         }
+        animator.SetBool("isMoving", isMoving);
     }
 
     IEnumerator Move(Vector3 targetPos)
