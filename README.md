@@ -11,7 +11,7 @@
   - **Exit Game : Escape**
 ---
 - **Versions :**
-  - **F6X POKEMON 2D** : `0.2.0`
+  - **F6X POKEMON 2D** : `0.3.0`
   - **Unity** : `2019.3.6f1`
 ---
 - **Credits :**

@@ -4,7 +4,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
-    public bool isMoving;
+    public LayerMask solidObjectsLayer;
+
+    private bool isMoving;
     private Vector2 input;
     private Animator animator;
 
@@ -37,8 +39,13 @@ public class PlayerController : MonoBehaviour
                 var targetPos = transform.position;
                 targetPos.x += input.x;
                 targetPos.y += input.y;
-                StartCoroutine(Move(targetPos));
-                ConsoleLog($"Player Move By ({input.x},{input.y}).");
+                if (IsWalkable(targetPos))
+                {
+                    StartCoroutine(Move(targetPos));
+                    ConsoleLog($"Player Move By ({input.x},{input.y}).");
+                }
+                else
+                    ConsoleLog("Target position is not walkable.");
             }
         }
         animator.SetBool("isMoving", isMoving);
@@ -54,6 +61,13 @@ public class PlayerController : MonoBehaviour
         }
         transform.position = targetPos;
         isMoving = false;
+    }
+
+    private bool IsWalkable(Vector3 targetPos)
+    {
+        if (Physics2D.OverlapCircle(targetPos, 0.2f, solidObjectsLayer) != null)
+            return false;
+        return true;
     }
 
     private void ConsoleLog(string message)
