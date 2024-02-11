@@ -4,14 +4,14 @@
   - **This project is for learning purposes only.**
 ---
 - **Controls :**
-  - **Move Up : W/↑**
-  - **Move Down : S/↓**
-  - **Move Right : D/→**
-  - **Move Left : A/←**
-  - **Exit Game : Escape**
+  - **Move Up : `W / ↑`**
+  - **Move Down : `S / ↓`**
+  - **Move Right : `D / →`**
+  - **Move Left : `A / ←`**
+  - **Exit Game : `Escape`**
 ---
-- **Versions :**
-  - **F6X POKEMON 2D** : `0.3.0`
+- **Stack :**
+  - **F6X POKEMON 2D** : `0.4.0`
   - **Unity** : `2019.3.6f1`
 ---
 - **Credits :**
