@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d020807a6f29454198f84ea76dd6471, type: 3}
+  m_Name: '#0004 - CHARMANDER'
+  m_EditorClassIdentifier: 
+  name: CHARMANDER
+  description: Prefiere los sitios calientes. Dicen que cuando llueve sale vapor
+    de la punta de su cola.
+  frontSprite: {fileID: 21300000, guid: cd710dfbfe5bde641b4725941ec81359, type: 3}
+  backSprite: {fileID: 21300000, guid: 196bbc14fb5c09f4fa285be0580971e1, type: 3}
+  type1: 7
+  type2: 0
+  maxHp: 39
+  attack: 52
+  defense: 43
+  spAttack: 60
+  spDefense: 50
+  speed: 65

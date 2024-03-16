@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     public Color classColor;
     public bool consoleLog;
-    private GameManager gameManager;
+    private GameController gameController;
 
     private void Awake()
     {
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private void InitializeReferences()
     {
         animator = GetComponent<Animator>();
-        gameManager = FindObjectOfType<GameManager>();
+        gameController = FindObjectOfType<GameController>();
     }
 
     private void Update()
@@ -86,6 +86,6 @@ public class PlayerController : MonoBehaviour
     private void ConsoleLog(string message)
     {
         if (consoleLog)
-            gameManager.ConsoleLogSystem($"{message}", classColor);
+            gameController.ConsoleLogSystem($"{message}", classColor);
     }
 }
