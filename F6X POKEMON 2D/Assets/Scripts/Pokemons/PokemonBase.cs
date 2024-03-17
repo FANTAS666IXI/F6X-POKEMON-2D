@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
-[CreateAssetMenu(fileName = "Pokemon", menuName = "Pokemon/Create new Pokemon")]
+[CreateAssetMenu(fileName = "Pokemon", menuName = "F6X Pokemon/Pokemon")]
 
 public class PokemonBase : ScriptableObject
 {
@@ -17,6 +18,7 @@ public class PokemonBase : ScriptableObject
     [SerializeField] int spAttack;
     [SerializeField] int spDefense;
     [SerializeField] int speed;
+    [SerializeField] List<LearnableMove> learnableMoves;
 
     public string Name
     {
@@ -113,27 +115,47 @@ public class PokemonBase : ScriptableObject
             return speed;
         }
     }
+    public List<LearnableMove> LearnableMoves
+    {
+        get { return learnableMoves; }
+    }
+}
+
+[System.Serializable]
+public class LearnableMove
+{
+    [SerializeField] MoveBase moveBase;
+    [SerializeField] int level;
+
+    public MoveBase Base
+    {
+        get { return moveBase; }
+    }
+    public int Level
+    {
+        get { return level; }
+    }
 }
 
 public enum PokemonType
 {
-    Ninguno,
-    Acero,
-    Agua,
-    Bicho,
-    Dragon,
-    Electrico,
-    Fantasma,
-    Fuego,
-    Hada,
-    Hielo,
-    Lucha,
-    Normal,
-    Planta,
-    Psiquico,
-    Roca,
-    Siniestro,
-    Tierra,
-    Veneno,
-    Volador
+    NINGUNO,
+    ACERO,
+    AGUA,
+    BICHO,
+    DRAGÓN,
+    ELÉCTRICO,
+    FANTASMA,
+    FUEGO,
+    HADA,
+    HIELO,
+    LUCHA,
+    NORMAL,
+    PLANTA,
+    PSÍQUICO,
+    ROCA,
+    SINIESTRO,
+    TIERRA,
+    VENENO,
+    VOLADOR
 }

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d020807a6f29454198f84ea76dd6471, type: 3}
+  m_Name: '#0007 SQUIRTLE'
+  m_EditorClassIdentifier: 
+  name: SQUIRTLE
+  description: Tras nacer, su espalda se hincha y endurece como una concha. Echa
+    potente espuma por la boca.
+  frontSprite: {fileID: 21300000, guid: dc127e71aedcf634db373400c9934aba, type: 3}
+  backSprite: {fileID: 21300000, guid: 6412ea8359d6a7e479a72e4b1bd32931, type: 3}
+  type1: 2
+  type2: 0
+  maxHp: 44
+  attack: 48
+  defense: 65
+  spAttack: 50
+  spDefense: 64
+  speed: 43
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: 68c86d5c6a2710b4a9fb4affac6e0844, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 60724e0574d2d6d4891e7de641feb55f, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 9247faebab1eb9f41964e57c79046cf9, type: 2}
+    level: 3
+  - moveBase: {fileID: 11400000, guid: 1daa5bc7d6901d64eb3900cf1693febc, type: 2}
+    level: 6
+  - moveBase: {fileID: 11400000, guid: a953b97e01548b1489dd939cc6038e90, type: 2}
+    level: 9
+  - moveBase: {fileID: 11400000, guid: 1c9dd752bae6a70488fd017e54cd263f, type: 2}
+    level: 12
+  - moveBase: {fileID: 11400000, guid: ee349b7e331bfb9479f23cbaeded48c7, type: 2}
+    level: 15
+  - moveBase: {fileID: 11400000, guid: cf74da75b62d67a41abfbabd85ac54fc, type: 2}
+    level: 18
+  - moveBase: {fileID: 11400000, guid: 88714cc4bfb41fe46a3f2fda49c34357, type: 2}
+    level: 21
+  - moveBase: {fileID: 11400000, guid: 0cdc4f049f0251d4d8c9457ec5adb4ed, type: 2}
+    level: 24
+  - moveBase: {fileID: 11400000, guid: eead2292aa77cae448c67d031ccb26f4, type: 2}
+    level: 27
+  - moveBase: {fileID: 11400000, guid: 758a991c132c5154795b3ae22684d32f, type: 2}
+    level: 30
+  - moveBase: {fileID: 11400000, guid: 4540984a4ee4b3b47a9644838680f285, type: 2}
+    level: 33
+  - moveBase: {fileID: 11400000, guid: deb4d0d1baa38a84593faec8b0c1cadf, type: 2}
+    level: 36

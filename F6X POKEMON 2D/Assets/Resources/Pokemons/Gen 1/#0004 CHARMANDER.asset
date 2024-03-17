@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d020807a6f29454198f84ea76dd6471, type: 3}
+  m_Name: '#0004 CHARMANDER'
+  m_EditorClassIdentifier: 
+  name: CHARMANDER
+  description: Prefiere los sitios calientes. Dicen que cuando llueve sale vapor
+    de la punta de su cola.
+  frontSprite: {fileID: 21300000, guid: cd710dfbfe5bde641b4725941ec81359, type: 3}
+  backSprite: {fileID: 21300000, guid: 196bbc14fb5c09f4fa285be0580971e1, type: 3}
+  type1: 7
+  type2: 0
+  maxHp: 39
+  attack: 52
+  defense: 43
+  spAttack: 60
+  spDefense: 50
+  speed: 65
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: c16fcd6203cac8c4d8cf4c898abf55b6, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: ce421bd6e8ffb7449aa2c681c09b4ed1, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: a5f0f032e460a7e4e826df93db333ecd, type: 2}
+    level: 4
+  - moveBase: {fileID: 11400000, guid: 3ba3c98f8a12fdf46ab26aa5eeada819, type: 2}
+    level: 8
+  - moveBase: {fileID: 11400000, guid: 950a4b1144601764082b76df92cc4026, type: 2}
+    level: 12
+  - moveBase: {fileID: 11400000, guid: eb3b66402359e5d458c2e39e33f58627, type: 2}
+    level: 17
+  - moveBase: {fileID: 11400000, guid: 0b51191dffa62cd4c84cef2edb9730b6, type: 2}
+    level: 20
+  - moveBase: {fileID: 11400000, guid: 943f257f5d7441347ab79f6df5c4857a, type: 2}
+    level: 24
+  - moveBase: {fileID: 11400000, guid: 624eb6a5b6182984c890aa6faeb4d329, type: 2}
+    level: 28
+  - moveBase: {fileID: 11400000, guid: e4671cba4a1d4d140805ea94e6bd01df, type: 2}
+    level: 32
+  - moveBase: {fileID: 11400000, guid: 82d5efe06749cf849b35eb564577464f, type: 2}
+    level: 36
+  - moveBase: {fileID: 11400000, guid: 5ce2e481d20fada48aff05a2089bc970, type: 2}
+    level: 40

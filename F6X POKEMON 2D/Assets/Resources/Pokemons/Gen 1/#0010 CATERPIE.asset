@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d020807a6f29454198f84ea76dd6471, type: 3}
+  m_Name: '#0010 CATERPIE'
+  m_EditorClassIdentifier: 
+  name: CATERPIE
+  description: "Sus cortas patas est\xE1n recubiertas de ventosas que le permiten
+    subir incansable por muros y cuestas."
+  frontSprite: {fileID: 21300000, guid: 83f0c15eed009484fa444648f695d119, type: 3}
+  backSprite: {fileID: 21300000, guid: c1d5738c80141024ca6db382b466bec5, type: 3}
+  type1: 3
+  type2: 0
+  maxHp: 45
+  attack: 30
+  defense: 35
+  spAttack: 20
+  spDefense: 20
+  speed: 45
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: 68c86d5c6a2710b4a9fb4affac6e0844, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: b68cf03d666b5bb4b9c6d0464113674e, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 89d97fb246d2ee847aeaf70690790f81, type: 2}
+    level: 9
