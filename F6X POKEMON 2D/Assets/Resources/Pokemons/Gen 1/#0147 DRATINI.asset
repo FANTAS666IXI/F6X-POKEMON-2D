@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d020807a6f29454198f84ea76dd6471, type: 3}
+  m_Name: '#0147 DRATINI'
+  m_EditorClassIdentifier: 
+  name: DRATINI
+  description: "Considerado como un m\xEDtico Pok\xE9mon durante a\xF1os hasta que
+    fue encontrada una colonia submarina."
+  frontSprite: {fileID: 21300000, guid: 5e13199cdde035b4c942150b3645a1df, type: 3}
+  backSprite: {fileID: 21300000, guid: 3822df1296edd3f4cb5809cc3919c5f0, type: 3}
+  type1: 4
+  type2: 0
+  maxHp: 41
+  attack: 64
+  defense: 45
+  spAttack: 50
+  spDefense: 50
+  speed: 50
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: 536ec52da825b3e41b6c0e177521c493, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 0dde5f73c4d0371498def29b6a7041a8, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 79d87051750c5024aaafe1b82db6b829, type: 2}
+    level: 5
+  - moveBase: {fileID: 11400000, guid: f4d33d867d97f26498ffa92641919d63, type: 2}
+    level: 10
+  - moveBase: {fileID: 11400000, guid: fa0e5f154a814a748804284f9cae0e9a, type: 2}
+    level: 15
+  - moveBase: {fileID: 11400000, guid: ae969160ba8ed16418400c4edec24331, type: 2}
+    level: 20
+  - moveBase: {fileID: 11400000, guid: 3bc3c834ff30bcf4788cf9e407d0f015, type: 2}
+    level: 25
+  - moveBase: {fileID: 11400000, guid: 0cdc4f049f0251d4d8c9457ec5adb4ed, type: 2}
+    level: 31
+  - moveBase: {fileID: 11400000, guid: 7d28b697ad4f29d478d4a56cf77118e7, type: 2}
+    level: 35
+  - moveBase: {fileID: 11400000, guid: 7b5c0c167443de74db8151747891a8e4, type: 2}
+    level: 40
+  - moveBase: {fileID: 11400000, guid: 88714cc4bfb41fe46a3f2fda49c34357, type: 2}
+    level: 45
+  - moveBase: {fileID: 11400000, guid: e2fd3addf0796054388df9aa4771da94, type: 2}
+    level: 50
+  - moveBase: {fileID: 11400000, guid: abd0c09d1b87cb6428af521353ac932f, type: 2}
+    level: 55
+  - moveBase: {fileID: 11400000, guid: 9c447c417504ee4488d272141cc8771c, type: 2}
+    level: 60

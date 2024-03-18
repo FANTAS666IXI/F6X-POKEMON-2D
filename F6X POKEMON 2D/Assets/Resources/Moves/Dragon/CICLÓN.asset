@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205fc25154d351646ba81c6da72c65ac, type: 3}
+  m_Name: "CICL\xD3N"
+  m_EditorClassIdentifier: 
+  name: "CICL\xD3N"
+  description: "Cicl\xF3n es un movimiento de tipo drag\xF3n introducido en la segunda
+    generaci\xF3n."
+  type: 4
+  power: 40
+  accuracy: 100
+  pp: 20
