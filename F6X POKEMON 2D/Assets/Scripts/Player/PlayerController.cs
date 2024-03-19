@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -42,11 +42,11 @@ public class PlayerController : MonoBehaviour
                 targetPos.y += input.y;
                 if (IsWalkable(targetPos))
                 {
+                    ConsoleLog($"Player Move by ({input.x},{input.y}).");
                     StartCoroutine(Move(targetPos));
-                    ConsoleLog($"Player Move By ({input.x},{input.y}).");
                 }
                 else
-                    ConsoleLog("Target position is not walkable.");
+                    ConsoleLog("Target Position is not Walkable.");
             }
         }
         animator.SetBool("isMoving", isMoving);
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Random.Range(1, 101) <= 10)
             {
-                ConsoleLog("Encountered a wild pokemon.");
+                ConsoleLog("Encountered a Wild Pokemon.");
             }
         }
     }

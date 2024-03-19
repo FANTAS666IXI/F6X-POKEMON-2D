@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections.Generic;
+
 
 [CreateAssetMenu(fileName = "Pokemon", menuName = "F6X Pokemon/Pokemon")]
 

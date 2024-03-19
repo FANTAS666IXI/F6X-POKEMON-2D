@@ -1,8 +1,11 @@
-﻿using System.Diagnostics;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Diagnostics;
+
 
 public class GameController : MonoBehaviour
 {
+    private bool developerMode;
+
     public Color classColor;
     public bool consoleLog;
     public bool consoleLogSystem;
@@ -10,11 +13,49 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         ConsoleLog("Starting Game...");
+        InitializeVariables();
+        LockCursor();
+    }
+
+    private void InitializeVariables()
+    {
+        EnableDeveloperMode();
+    }
+
+    private void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
     {
+        DeveloperMode();
         ExitGame();
+    }
+
+    private void DeveloperMode()
+    {
+        if (Input.GetKeyDown(KeyCode.Keypad0))
+        {
+            if (!developerMode)
+                EnableDeveloperMode();
+            else
+                DisableDeveloperMode();
+        }
+    }
+
+    private void EnableDeveloperMode()
+    {
+        developerMode = true;
+        ConsoleLog("Developer Mode Enabled.");
+    }
+
+
+    private void DisableDeveloperMode()
+    {
+        developerMode = true;
+        ConsoleLog("Developer Mode Disabled.");
     }
 
     private void ExitGame()
