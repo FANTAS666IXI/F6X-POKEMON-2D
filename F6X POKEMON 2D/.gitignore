@@ -27,6 +27,9 @@
 .vs/
 .vsconfig
 
+# Console Log System Logs
+/ConsoleLogSystem/
+
 # Gradle cache directory
 .gradle/
 

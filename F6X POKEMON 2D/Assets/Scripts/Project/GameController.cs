@@ -1,25 +1,39 @@
 ﻿using UnityEngine;
 using System.Diagnostics;
 
-
 public class GameController : MonoBehaviour
 {
+    [Header("Game Controller Settings")]
     private bool developerMode;
 
-    public Color classColor;
+    [Header("Console Log Settings")]
     public bool consoleLog;
-    public bool consoleLogSystem;
+    public Color logColor;
+    private ConsoleLogSystemController consoleLogSystemController;
 
     private void Awake()
     {
-        ConsoleLog("Starting Game...");
         InitializeVariables();
+        ConsoleLog("Starting Game...", true);
+        EnableDeveloperMode();
         LockCursor();
     }
 
     private void InitializeVariables()
     {
-        EnableDeveloperMode();
+        consoleLogSystemController = GameObject.FindGameObjectWithTag("ConsoleLogSystem").GetComponent<ConsoleLogSystemController>();
+    }
+
+    private void EnableDeveloperMode()
+    {
+        developerMode = true;
+        ConsoleLog("Developer Mode Enabled.", true);
+    }
+
+    private void DisableDeveloperMode()
+    {
+        developerMode = false;
+        ConsoleLog("Developer Mode Disabled.", true);
     }
 
     private void LockCursor()
@@ -45,43 +59,18 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void EnableDeveloperMode()
-    {
-        developerMode = true;
-        ConsoleLog("Developer Mode Enabled.");
-    }
-
-
-    private void DisableDeveloperMode()
-    {
-        developerMode = true;
-        ConsoleLog("Developer Mode Disabled.");
-    }
-
     private void ExitGame()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ConsoleLog("Closing Game...");
+            ConsoleLog("Closing Game...", true);
             Application.Quit();
         }
     }
 
-    private void ConsoleLog(string message)
+    private void ConsoleLog(string message = "Test", bool showFrame = false, int infoLevel = 0)
     {
         if (consoleLog)
-            ConsoleLogSystem($"{message}", classColor);
-    }
-
-    public void ConsoleLogSystem(string message, Color classColor, int frame = 1)
-    {
-        if (consoleLogSystem)
-        {
-            StackTrace stackTrace = new StackTrace();
-            StackFrame stackFrame = stackTrace.GetFrame(frame);
-            string callingScript = stackFrame.GetMethod().DeclaringType.Name;
-            string stringClassColor = ("#" + ColorUtility.ToHtmlStringRGBA(classColor));
-            UnityEngine.Debug.Log($"<b>[<color={stringClassColor}>{callingScript}</color>]: {message}</b>");
-        }
+            consoleLogSystemController.ConsoleLogSystem(message, logColor, showFrame, infoLevel);
     }
 }

@@ -2,6 +2,7 @@
 
 public class HPBar : MonoBehaviour
 {
+    [Header("HP Bar Parameters")]
     [SerializeField] GameObject health;
 
     public void SetHP(float hpNormalized)

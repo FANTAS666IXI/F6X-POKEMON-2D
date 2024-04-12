@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class BattleHud : MonoBehaviour
 {
+    [Header("Battle Hud Parameters")]
     [SerializeField] Text nameText;
     [SerializeField] Text levelText;
     [SerializeField] HPBar hpBar;

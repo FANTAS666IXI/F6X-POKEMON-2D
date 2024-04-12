@@ -2,14 +2,16 @@
 
 public class BattleSystem : MonoBehaviour
 {
+    [Header("Battle System Parameters")]
     [SerializeField] BattleUnit playerUnit;
     [SerializeField] BattleHud playerHud;
     [SerializeField] BattleUnit enemyUnit;
     [SerializeField] BattleHud enemyHud;
 
-    public Color classColor;
+    [Header("Console Log Settings")]
     public bool consoleLog;
-    private GameController gameController;
+    public Color logColor;
+    private ConsoleLogSystemController consoleLogSystemController;
 
     private void Awake()
     {
@@ -18,7 +20,7 @@ public class BattleSystem : MonoBehaviour
 
     private void InitializeReferences()
     {
-        gameController = FindObjectOfType<GameController>();
+        consoleLogSystemController = GameObject.FindGameObjectWithTag("ConsoleLogSystem").GetComponent<ConsoleLogSystemController>();
     }
 
     private void Start()
@@ -28,16 +30,16 @@ public class BattleSystem : MonoBehaviour
 
     public void SetUpBattle()
     {
-        ConsoleLog("Set Up Battle");
+        ConsoleLog("Set Up Battle", true);
         playerUnit.SetUp();
         playerHud.SetData(playerUnit.Pokemon);
         enemyUnit.SetUp();
         enemyHud.SetData(enemyUnit.Pokemon);
     }
 
-    private void ConsoleLog(string message)
+    private void ConsoleLog(string message = "Test", bool showFrame = false, int infoLevel = 0)
     {
         if (consoleLog)
-            gameController.ConsoleLogSystem($"{message}", classColor);
+            consoleLogSystemController.ConsoleLogSystem(message, logColor, showFrame, infoLevel);
     }
 }

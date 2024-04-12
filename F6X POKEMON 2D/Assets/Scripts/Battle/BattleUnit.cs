@@ -3,15 +3,19 @@ using UnityEngine.UI;
 
 public class BattleUnit : MonoBehaviour
 {
+    [Header("Battle Unit Settings")]
+    [SerializeField] bool isPlayerUnit;
+
+    [Header("Battle Unit Parameters")]
     [SerializeField] PokemonBase _base;
     [SerializeField] int level;
-    [SerializeField] bool isPlayerUnit;
 
     public Pokemon Pokemon { get; set; }
 
-    public Color classColor;
+    [Header("Console Log Settings")]
     public bool consoleLog;
-    private GameController gameController;
+    public Color logColor;
+    private ConsoleLogSystemController consoleLogSystemController;
 
     private void Awake()
     {
@@ -20,7 +24,7 @@ public class BattleUnit : MonoBehaviour
 
     private void InitializeReferences()
     {
-        gameController = FindObjectOfType<GameController>();
+        consoleLogSystemController = GameObject.FindGameObjectWithTag("ConsoleLogSystem").GetComponent<ConsoleLogSystemController>();
     }
 
     public void SetUp()
@@ -38,9 +42,9 @@ public class BattleUnit : MonoBehaviour
         }
     }
 
-    private void ConsoleLog(string message)
+    private void ConsoleLog(string message = "Test", bool showFrame = false, int infoLevel = 0)
     {
         if (consoleLog)
-            gameController.ConsoleLogSystem($"{message}", classColor);
+            consoleLogSystemController.ConsoleLogSystem(message, logColor, showFrame, infoLevel);
     }
 }

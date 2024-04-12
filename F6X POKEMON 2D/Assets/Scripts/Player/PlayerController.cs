@@ -3,7 +3,10 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Player Controller Settings")]
     public float moveSpeed;
+
+    [Header("Player Controller Parameters")]
     public LayerMask solidObjectsLayer;
     public LayerMask grassLayer;
 
@@ -11,9 +14,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 input;
     private Animator animator;
 
-    public Color classColor;
+    [Header("Console Log Settings")]
     public bool consoleLog;
-    private GameController gameController;
+    public Color logColor;
+    private ConsoleLogSystemController consoleLogSystemController;
 
     private void Awake()
     {
@@ -22,8 +26,8 @@ public class PlayerController : MonoBehaviour
 
     private void InitializeReferences()
     {
+        consoleLogSystemController = GameObject.FindGameObjectWithTag("ConsoleLogSystem").GetComponent<ConsoleLogSystemController>();
         animator = GetComponent<Animator>();
-        gameController = FindObjectOfType<GameController>();
     }
 
     private void Update()
@@ -78,14 +82,14 @@ public class PlayerController : MonoBehaviour
         {
             if (Random.Range(1, 101) <= 10)
             {
-                ConsoleLog("Encountered a Wild Pokemon.");
+                ConsoleLog("Encountered a Wild Pokemon.", true);
             }
         }
     }
 
-    private void ConsoleLog(string message)
+    private void ConsoleLog(string message = "Test", bool showFrame = false, int infoLevel = 0)
     {
         if (consoleLog)
-            gameController.ConsoleLogSystem($"{message}", classColor);
+            consoleLogSystemController.ConsoleLogSystem(message, logColor, showFrame, infoLevel);
     }
 }

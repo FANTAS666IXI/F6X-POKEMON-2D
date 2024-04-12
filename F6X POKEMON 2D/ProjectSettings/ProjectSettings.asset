@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: FANTAS666X
+  companyName: F6X
   productName: F6X POKEMON 2D
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -43,6 +43,8 @@ PlayerSettings:
   - logo: {fileID: 10404, guid: 0000000000000000e000000000000000, type: 0}
     duration: 2
   - logo: {fileID: 21300000, guid: a5da3ec228e6dd840a1ca8645b5a0742, type: 3}
+    duration: 2
+  - logo: {fileID: 21300000, guid: f83586f4bb21d864ab3b980298556173, type: 3}
     duration: 2
   m_VirtualRealitySplashScreen: {fileID: 2800000, guid: a5da3ec228e6dd840a1ca8645b5a0742,
     type: 3}
@@ -124,7 +126,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.7.1
+  bundleVersion: 0.7.2
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -169,7 +171,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier: {}
   buildNumber:
-    Standalone: 0.7.1
+    Standalone: 0.7.2
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
@@ -283,7 +285,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 6aa26c6a94a8ba549bb252684ab38e6d, type: 3}
+      m_Icon: {fileID: 2800000, guid: f83586f4bb21d864ab3b980298556173, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
