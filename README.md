@@ -19,7 +19,7 @@
 ---
 
 - **STACK :**
-  - **F6X POKEMON 2D** : `0.7.2`
+  - **F6X POKEMON 2D** : `0.7.3`
   - **UNITY** : `2019.3.6f1`
   - **CONSOLE LOG SYSTEM** : `1.1.1`
 

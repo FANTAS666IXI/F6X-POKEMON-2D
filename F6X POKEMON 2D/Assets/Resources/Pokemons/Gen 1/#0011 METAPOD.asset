@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d020807a6f29454198f84ea76dd6471, type: 3}
+  m_Name: '#0011 METAPOD'
+  m_EditorClassIdentifier: 
+  name: METAPOD
+  description: "Este Pok\xE9mon es vulnerable al ataque cuando su concha es blanda,
+    dejando expuesto su fr\xE1gil cuerpo."
+  frontSprite: {fileID: 21300000, guid: b35a8586828422b449ebb3dad9784c15, type: 3}
+  backSprite: {fileID: 21300000, guid: 290a410c8d35b4d40a5632f7e6bdde01, type: 3}
+  type1: 3
+  type2: 0
+  maxHp: 50
+  attack: 20
+  defense: 55
+  spAttack: 25
+  spDefense: 25
+  speed: 30
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: 7982814c8bf8c49429940d7254b803ef, type: 2}
+    level: 1

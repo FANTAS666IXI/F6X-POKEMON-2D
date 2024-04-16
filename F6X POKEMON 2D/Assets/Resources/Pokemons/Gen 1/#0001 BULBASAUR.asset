@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d020807a6f29454198f84ea76dd6471, type: 3}
+  m_Name: '#0001 BULBASAUR'
+  m_EditorClassIdentifier: 
+  name: BULBASAUR
+  description: "Una rara semilla fue plantada en su espalda al nacer. La planta brota
+    y crece con este Pok\xE9mon."
+  frontSprite: {fileID: 21300000, guid: d02436860c89b164aaa4f11458301dbf, type: 3}
+  backSprite: {fileID: 21300000, guid: ad7d9fa45c3172c46acea0952c95dbdd, type: 3}
+  type1: 12
+  type2: 17
+  maxHp: 45
+  attack: 49
+  defense: 49
+  spAttack: 65
+  spDefense: 65
+  speed: 45
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: 68c86d5c6a2710b4a9fb4affac6e0844, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: ce421bd6e8ffb7449aa2c681c09b4ed1, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: ed3ec62d8b4e80645821dca3fa672b58, type: 2}
+    level: 3
+  - moveBase: {fileID: 11400000, guid: 0abf42111bb7b364a9b296ffdf08bb4d, type: 2}
+    level: 3
+  - moveBase: {fileID: 11400000, guid: 6a167fa8074e7d84bb456ca19bdbd754, type: 2}
+    level: 9
+  - moveBase: {fileID: 11400000, guid: 075d6ffc44597eb4da782efba25f7fe9, type: 2}
+    level: 12
+  - moveBase: {fileID: 11400000, guid: f8a695685bbd6dc40800cf12b672dfd2, type: 2}
+    level: 15
+  - moveBase: {fileID: 11400000, guid: 8134cbd5bc485cd4f8f07f188fb9ef26, type: 2}
+    level: 15
+  - moveBase: {fileID: 11400000, guid: 102a2f11bd95101409148dc502742913, type: 2}
+    level: 18
+  - moveBase: {fileID: 11400000, guid: ae3ae6521dc30454c9887d2d923eea21, type: 2}
+    level: 21
+  - moveBase: {fileID: 11400000, guid: 38b72cc20abbaa24d8084d4d817d7ab2, type: 2}
+    level: 24
+  - moveBase: {fileID: 11400000, guid: 134231dafceeba54f9ad6059ec1c79f2, type: 2}
+    level: 27
+  - moveBase: {fileID: 11400000, guid: fe350284634ced644a065171b821b9d4, type: 2}
+    level: 30
+  - moveBase: {fileID: 11400000, guid: 0b755152242a0674b8ccaab8729bb285, type: 2}
+    level: 33
+  - moveBase: {fileID: 11400000, guid: 5fee7dcbef75898459e8f1f9094fb752, type: 2}
+    level: 36

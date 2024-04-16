@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d020807a6f29454198f84ea76dd6471, type: 3}
+  m_Name: '#0012 BUTTERFREE'
+  m_EditorClassIdentifier: 
+  name: BUTTERFREE
+  description: "En combate, aletea a gran velocidad para lanzar al aire sus t\xF3xicos
+    polvillos."
+  frontSprite: {fileID: 21300000, guid: 41d5e83f575fbf94ebffc7a6464897d7, type: 3}
+  backSprite: {fileID: 21300000, guid: eb1bd4a3e1ad6914895cde5827a186ad, type: 3}
+  type1: 3
+  type2: 18
+  maxHp: 60
+  attack: 45
+  defense: 50
+  spAttack: 90
+  spDefense: 80
+  speed: 70
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: c5eee152cf91f934dae26e3d227be5cb, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 7982814c8bf8c49429940d7254b803ef, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 68c86d5c6a2710b4a9fb4affac6e0844, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: b68cf03d666b5bb4b9c6d0464113674e, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 89d97fb246d2ee847aeaf70690790f81, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: f0488dab28bf80241946bfbda52268bc, type: 2}
+    level: 4
+  - moveBase: {fileID: 11400000, guid: a2cc3d0c198f063488dd65a27c3552eb, type: 2}
+    level: 8
+  - moveBase: {fileID: 11400000, guid: f8a695685bbd6dc40800cf12b672dfd2, type: 2}
+    level: 12
+  - moveBase: {fileID: 11400000, guid: d5f6bd6b5cbe962448865aa14ddc781c, type: 2}
+    level: 12
+  - moveBase: {fileID: 11400000, guid: 8134cbd5bc485cd4f8f07f188fb9ef26, type: 2}
+    level: 12
+  - moveBase: {fileID: 11400000, guid: 58856a7a87ad39a43ac0d23965c09c18, type: 2}
+    level: 16
+  - moveBase: {fileID: 11400000, guid: e8184d0e0b5fb5345842d51fc8d8ba65, type: 2}
+    level: 20
+  - moveBase: {fileID: 11400000, guid: e48fa3269b3fc1449a709dad47f690a2, type: 2}
+    level: 24
+  - moveBase: {fileID: 11400000, guid: 7b5c0c167443de74db8151747891a8e4, type: 2}
+    level: 28
+  - moveBase: {fileID: 11400000, guid: 98c07b57ba179c4458678ca814bb0b7d, type: 2}
+    level: 32
+  - moveBase: {fileID: 11400000, guid: a797177fb1a37e449a86d06e925d6afe, type: 2}
+    level: 36
+  - moveBase: {fileID: 11400000, guid: 0afe4b3372bd41041a9f3586d1175ec1, type: 2}
+    level: 40
+  - moveBase: {fileID: 11400000, guid: 3d049d67671019848be50b43cc77845b, type: 2}
+    level: 44
