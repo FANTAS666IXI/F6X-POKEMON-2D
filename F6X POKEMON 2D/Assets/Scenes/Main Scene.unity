@@ -447,7 +447,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
-  m_Text: F6X POKEMON 2D v0.7.3
+  m_Text: F6X POKEMON 2D v0.7.4
 --- !u!222 &383170958
 CanvasRenderer:
   m_ObjectHideFlags: 0
