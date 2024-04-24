@@ -9,17 +9,18 @@
 ---
 
 - **CONTROLS :**
-  - **Move Up : `W / ↑`**
-  - **Move Left : `A / ←`**
-  - **Move Down : `S / ↓`**
-  - **Move Right : `D / →`**
+  - **Move Up : `W`**
+  - **Move Left : `A`**
+  - **Move Down : `S`**
+  - **Move Right : `D`**
+  - **Accept : `J`**
   - **Developer Mode : `KEYPAD 0`**
   - **Exit Game : `ESCAPE`**
 
 ---
 
 - **STACK :**
-  - **F6X POKEMON 2D** : `0.7.4`
+  - **F6X POKEMON 2D** : `0.8.0`
   - **UNITY** : `2019.3.6f1`
   - **CONSOLE LOG SYSTEM** : `1.3.0`
 
