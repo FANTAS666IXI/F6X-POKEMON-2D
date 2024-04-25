@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public enum BattleState { Start, PlayerAction, PlayerMove, EnemyMove, Busy }
 
